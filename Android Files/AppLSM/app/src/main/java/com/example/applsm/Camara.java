@@ -93,7 +93,10 @@ public class Camara extends AppCompatActivity {
                 .build();
 
 
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .readTimeout(50, TimeUnit.SECONDS)
+                .build();
+
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
@@ -102,7 +105,11 @@ public class Camara extends AppCompatActivity {
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-
+                String r =response.body().string();
+                try {resp.setText(r);}
+                catch (Exception e){
+                    resp.setText(e.toString());
+                }
             }
         });
     }
