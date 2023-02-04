@@ -5,7 +5,5 @@ __pycache__
 data/dataset/*
 !data/dataset/.gitkeep
 
-!data/videos/BlurredA/.gitkeep
-data/videos/*
 data/videos/BlurredA/*
-!data/videos/.gitkeep
+!data/videos/BlurredA/.gitkeep
