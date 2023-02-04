@@ -6,4 +6,5 @@ data/dataset/*
 !data/dataset/.gitkeep
 
 data/videos/*
+!data/videos/Blurred-A/*
 !data/videos/.gitkeep
